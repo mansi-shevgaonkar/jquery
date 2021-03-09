@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jq-ui</title>
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="jquery-ui/jquery-ui.js"></script>
+	<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+	<style type="text/css">
+		
+  #draggable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em;
+    background-color: blue;
+    }
+
+    #resizable { 
+    	width: 150px; 
+    	height: 150px; 
+    	padding: 0.5em; 
+    	border:4px solid black; 
+    }
+
+	    #droppable { 
+	     width: 450px;
+	     height: 450px; 
+	     padding: 0.5em; 
+	     float: left; 
+	     margin: 10px;
+	     border:4px solid black;
+
+
+	 }
+
+    #containment-wrapper { 
+    	width: 50%; 
+    	height:900px;
+    	border:2px solid #ccc; 
+    	padding: 10px;
+    	float: right;
+    	  }
+
+    h3 { clear: left; }
+  
+	</style>
+</head>
+<body>
+
+<div id="containment-wrapper">
+		<div id="draggable">
+	        <p>Drag me around</p>
+	    </div>
+	    <div id="resizable">resize</div>
+	    <div id="droppable">drop here</div>
+</div>
+
+<div id="accordion">
+	<h2>sec1</h3><div><p>hello this is 1</p></div>
+	<h2>sec2</h2><div><p>hello this is 2</p></div>
+	<h2>sec3</h2><div><p>hello this is 3</p></div>
+	<h2>sec4</h2><div><p>hello this is 4</p></div>
+</div>
+ 
+
+<script type="text/javascript">
+  $( function()
+	   {
+	    $( "#draggable" ).draggable({ containment: "#containment-wrapper", scroll: false });
+	    $("#droppable").droppable({drop: function( event, ui ){
+	    	alert("drpped!");
+	    }
+     });
+  });
+
+  $( function()
+	  {
+	  	$("#resizable").resizable({containment: "#containment-wrapper"});
+	  });
+  
+  	$("#accordion").accordion();
+  
+
+
+  </script>
+</body>
+</html>

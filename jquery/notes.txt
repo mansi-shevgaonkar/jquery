@@ -1,0 +1,16 @@
+J Query
+
+syntax:
+
+everything is written inside the script tag just like we write in javascript.
+jquery is basically just a framework of javascrpt so it is almost similar but easier to use.
+
+every jquery element starts with a {$} symbol.
+
+$("circle").click(function() { } );
+
+so basically this is how we write in jq. it is a short way of writing
+ 
+document.getElementById("").onclick = function() {}
+
+	

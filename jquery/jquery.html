@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery1</title>
+    <script src="jquery-3.5.1.min.js"></script>
+	<style type="text/css">
+		#circle{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			border-radius: 50%;
+			margin: 10px;
+		}
+
+		.square{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			
+			margin: 10px;
+		}
+
+        #fadein{
+        	display: none;
+        }
+
+
+
+	</style>
+</head>
+<body>
+	hey
+	<div id="circle"></div>
+	<div class="square"></div>
+	<p id="fadeout">hello this is a paragraph</p>
+	<p id="fadein">hello this is a paragraph</p>
+	<button id="out">click here to fade out</button>
+	<button id="in">click here to fade in</button>
+
+
+
+
+
+	<script type="text/javascript">
+        
+            $("#out").click(function(){
+               $("#fadeout").fadeOut("slow",function(){
+               	alert("fadeout is complete");
+               });
+              }); 	
+
+               	$("#in").click(function(){
+               $("#fadein").fadeIn("slow",function(){
+               	alert("fadein is complete");
+              
+            });
+});
+        
+        
+        </script>
+
+</body>
+</html>
